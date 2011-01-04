@@ -16,10 +16,50 @@ module ANSI2HTML
     }
     
     def self.execute
-      new(STDIN.read, STDOUT)
+      new(STDIN.read, STDOUT, ARGV.index('--envelope'))
     end
 
-    def initialize(ansi, out)
+    def initialize(ansi, out, envelope=false)
+      if(envelope)
+        out.print %{<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    .bold {
+      font-weight: bold;
+    }
+    .black {
+      color: black;
+    }
+    .red {
+      color: red;
+    }
+    .green {
+      color: green;
+    }
+    .yellow {
+      color: yellow;
+    }
+    .blue {
+      color: blue;
+    }
+    .magenta {
+      color: magenta;
+    }
+    .cyan {
+      color: cyan;
+    }
+    .white {
+      color: white;
+    }
+    .grey {
+      color: grey;
+    }
+  </style>
+</head>
+<body><pre><code>}
+      end
       s = StringScanner.new(ansi)
       while(!s.eos?)
         if s.scan(/\e\[(3[0-7]|90|1)m/)
@@ -31,6 +71,10 @@ module ANSI2HTML
             out.print(s.scan(/./m))
           end
         end
+      end
+
+      if(envelope)
+        out.print %{</code></pre></body></html>}
       end
     end
   end

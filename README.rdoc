@@ -3,7 +3,7 @@
 You have class. You are a hipster. You ride a fixie bike to work and you are member of a Scotch Whisky club.
 When using a computer, you prefer minimalistic command line applications that output ANSI colours in your
 terminal that you have configured to have semi-transparent background with Frank Zappa background music and
-a vim-like shortcuts that differentiates you from the common programmers. You are a big fish in a small pond.
+vim-like shortcuts that differentiates you from the common programmers. You are a big fish in a small pond.
 
 Your friends are not geeks like you, they have more important goals in their lives, but they admire you for being
 so smart, because you can write computer programs. Programs with ANSI colours even. And yet, they don't know how
@@ -14,7 +14,20 @@ You need a way to show your entourage the true power of ANSI colours. -A way tha
 You will just
 
   gem install ansi2html
-  curl github.com/aslakhellesoy/ansi2html/hipster.txt | ansi2html > hipster.html && open hipster.html
+  curl github.com/aslakhellesoy/ansi2html/raw/master/examples/summering_feil.txt | ansi2html --envelope > summering_feil.html && open summering_feil.html
 
 OMG you have a LINUX machine so you will do {TODO WTF is the equivalent of open in LINUX} to open the file.
-ZOMFG you have WINDOWS. The file will have Microsoft silverlight HTML 6 compliant javascripts and HTML5!
+ZOMFG you have WINDOWS. You'll figure out what to do. It works the same as a .htm file.
+
+HTML designers have a special option. Don't use --envelope. This will give you HTML with Scandinavian design instead. Just pump input in and 
+stick the output in your new fancy <article> and <section> fancy page with CSS3 yo. (It will explode if you have rounded corners). Nobody
+does that anymore. Please.
+
+Let's tweet #ansi2html with links to pages that have ANSI in HTML now, ok? (I would, but my home page is under construction, besides
+I don't promote my own art because I am an artist).
+
+== HALP
+
+Send me a pull request if you fixed something. This will get you started (after you install ruby):
+
+  gem install bundler && bundle install && rspec spec

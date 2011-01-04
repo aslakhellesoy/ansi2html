@@ -1,0 +1,36 @@
+Using the default profile...
+# language: no
+Egenskap: Summering
+  For å slippe å gjøre dumme feil
+  Som en regnskapsfører
+  Vil jeg kunne legge sammen
+
+  Scenario: to tall[90m              # examples/i18n/no/features/summering.feature:7[0m
+    [32mGitt at jeg har tastet inn [32m[1m5[0m[0m[32m[90m # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:7[0m[0m
+    [32mOg at jeg har tastet inn [32m[1m7[0m[0m[32m[90m   # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:7[0m[0m
+    [32mNår jeg summerer[90m             # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:11[0m[0m
+    [31mSå skal resultatet være [31m[1m12[0m[0m[31m[90m   # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:15[0m[0m
+[31m      expected: 12,
+           got: 14 (using ==) (RSpec::Expectations::ExpectationNotMetError)
+      ./examples/i18n/no/features/step_definitons/kalkulator_steps.rb:16:in `/skal resultatet være (\d*)/'
+      examples/i18n/no/features/summering.feature:11:in `Så skal resultatet være 12'[0m
+
+  [36m@iterasjon3[0m
+  Scenario: tre tall[90m             # examples/i18n/no/features/summering.feature:14[0m
+    [32mGitt at jeg har tastet inn [32m[1m5[0m[0m[32m[90m # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:7[0m[0m
+    [32mOg at jeg har tastet inn [32m[1m7[0m[0m[32m[90m   # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:7[0m[0m
+    [32mOg at jeg har tastet inn [32m[1m1[0m[0m[32m[90m   # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:7[0m[0m
+    [32mNår jeg summerer[90m             # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:11[0m[0m
+    [31mSå skal resultatet være [31m[1m13[0m[0m[31m[90m   # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:15[0m[0m
+[31m      expected: 13,
+           got: 16 (using ==) (RSpec::Expectations::ExpectationNotMetError)
+      ./examples/i18n/no/features/step_definitons/kalkulator_steps.rb:16:in `/skal resultatet være (\d*)/'
+      examples/i18n/no/features/summering.feature:19:in `Så skal resultatet være 13'[0m
+
+[31mFailing Scenarios:[0m
+[31mcucumber examples/i18n/no/features/summering.feature:7[0m[90m # Scenario: to tall[0m
+[31mcucumber examples/i18n/no/features/summering.feature:14[0m[90m # Scenario: tre tall[0m
+
+2 scenarios ([31m2 failed[0m)
+9 steps ([31m2 failed[0m, [32m7 passed[0m)
+0m0.005s

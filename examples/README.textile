@@ -1,0 +1,4 @@
+h1. Examples
+
+When you have read the uber README you will know what to do. You should be able to recreate the .html file from the .txt file.
+That's an exercise for you. If you can't do it you should study harder.

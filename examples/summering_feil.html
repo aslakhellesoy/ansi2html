@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    .bold {
+      font-weight: bold;
+    }
+    .black {
+      color: black;
+    }
+    .red {
+      color: red;
+    }
+    .green {
+      color: green;
+    }
+    .yellow {
+      color: yellow;
+    }
+    .blue {
+      color: blue;
+    }
+    .magenta {
+      color: magenta;
+    }
+    .cyan {
+      color: cyan;
+    }
+    .white {
+      color: white;
+    }
+    .grey {
+      color: grey;
+    }
+  </style>
+</head>
+<body><pre><code>Using the default profile...
+# language: no
+Egenskap: Summering
+  For å slippe å gjøre dumme feil
+  Som en regnskapsfører
+  Vil jeg kunne legge sammen
+
+  Scenario: to tall<span class="grey">              # examples/i18n/no/features/summering.feature:7</span>
+    <span class="green">Gitt at jeg har tastet inn <span class="green"><span class="bold">5</span></span><span class="green"><span class="grey"> # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:7</span></span>
+    <span class="green">Og at jeg har tastet inn <span class="green"><span class="bold">7</span></span><span class="green"><span class="grey">   # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:7</span></span>
+    <span class="green">Når jeg summerer<span class="grey">             # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:11</span></span>
+    <span class="red">Så skal resultatet være <span class="red"><span class="bold">12</span></span><span class="red"><span class="grey">   # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:15</span></span>
+<span class="red">      expected: 12,
+           got: 14 (using ==) (RSpec::Expectations::ExpectationNotMetError)
+      ./examples/i18n/no/features/step_definitons/kalkulator_steps.rb:16:in `/skal resultatet være (\d*)/'
+      examples/i18n/no/features/summering.feature:11:in `Så skal resultatet være 12'</span>
+
+  <span class="cyan">@iterasjon3</span>
+  Scenario: tre tall<span class="grey">             # examples/i18n/no/features/summering.feature:14</span>
+    <span class="green">Gitt at jeg har tastet inn <span class="green"><span class="bold">5</span></span><span class="green"><span class="grey"> # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:7</span></span>
+    <span class="green">Og at jeg har tastet inn <span class="green"><span class="bold">7</span></span><span class="green"><span class="grey">   # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:7</span></span>
+    <span class="green">Og at jeg har tastet inn <span class="green"><span class="bold">1</span></span><span class="green"><span class="grey">   # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:7</span></span>
+    <span class="green">Når jeg summerer<span class="grey">             # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:11</span></span>
+    <span class="red">Så skal resultatet være <span class="red"><span class="bold">13</span></span><span class="red"><span class="grey">   # examples/i18n/no/features/step_definitons/kalkulator_steps.rb:15</span></span>
+<span class="red">      expected: 13,
+           got: 16 (using ==) (RSpec::Expectations::ExpectationNotMetError)
+      ./examples/i18n/no/features/step_definitons/kalkulator_steps.rb:16:in `/skal resultatet være (\d*)/'
+      examples/i18n/no/features/summering.feature:19:in `Så skal resultatet være 13'</span>
+
+<span class="red">Failing Scenarios:</span>
+<span class="red">cucumber examples/i18n/no/features/summering.feature:7</span><span class="grey"> # Scenario: to tall</span>
+<span class="red">cucumber examples/i18n/no/features/summering.feature:14</span><span class="grey"> # Scenario: tre tall</span>
+
+2 scenarios (<span class="red">2 failed</span>)
+9 steps (<span class="red">2 failed</span>, <span class="green">7 passed</span>)
+0m0.005s
+</code></pre></body></html>
