@@ -3,6 +3,7 @@ require 'strscan'
 module ANSI2HTML
   class Main
     COLOR = {
+       '1' => 'bold',
       '30' => 'black',
       '31' => 'red',
       '32' => 'green',
@@ -10,7 +11,8 @@ module ANSI2HTML
       '34' => 'blue',
       '35' => 'magenta',
       '36' => 'cyan',
-      '37' => 'white'
+      '37' => 'white',
+      '90' => 'grey'
     }
     
     def self.execute
@@ -20,7 +22,7 @@ module ANSI2HTML
     def initialize(ansi, out)
       s = StringScanner.new(ansi)
       while(!s.eos?)
-        if s.scan(/\e\[(3[0-7])m/)
+        if s.scan(/\e\[(3[0-7]|90|1)m/)
           out.print(%{<span class="#{COLOR[s[1]]}">})
         else
           if s.scan(/\e\[0m/)

@@ -1,0 +1,19 @@
+npm info it worked if it ends with ok
+npm info using npm@0.2.12-1
+npm info using node@v0.2.5
+npm info preinstall express@1.0.1
+npm info install express@1.0.1
+npm info postinstall express@1.0.1
+npm info predeactivate express@1.0.1
+npm info deactivate express@1.0.1
+npm info postdeactivate express@1.0.1
+npm info preactivate express@1.0.1
+npm info activate express@1.0.1
+npm info postactivate express@1.0.1
+npm info preupdatedependents express@1.0.1
+npm info not updating express@1.0.1 doesn't satisfy cukepatch-store@0.1.0
+npm info updatedependents express@1.0.1
+npm info postupdatedependents express@1.0.1
+npm info updated dependents [ 'express@1.0.1' ]
+npm info build Success: express@1.0.1
+npm ok

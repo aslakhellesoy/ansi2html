@@ -1,0 +1,62 @@
+Using the default profile...
+Feature: Tagged hooks
+
+  Background: [90m                                                    # features/hooks.feature:3[0m
+    [32mGiven a file named "[32m[1mfeatures/step_definitions/steps.rb[0m[0m[32m" with:[90m # aruba-0.3.2/lib/aruba/cucumber.rb:66[0m[0m
+[32m      """
+      Given /^this step works$/ do; end
+      """[0m
+    [32mAnd a file named "[32m[1mfeatures/support/hooks.rb[0m[0m[32m" with:[90m            # aruba-0.3.2/lib/aruba/cucumber.rb:66[0m[0m
+[32m      """
+      Before('~@no-boom') do 
+        raise 'boom'
+      end
+      """[0m
+    [32mAnd a file named "[32m[1mfeatures/f.feature[0m[0m[32m" with:[90m                   # aruba-0.3.2/lib/aruba/cucumber.rb:66[0m[0m
+[32m      """
+      Feature: With and without hooks
+        Scenario: using hook
+          Given this step works
+
+        @no-boom
+        Scenario: omitting hook
+          Given this step works
+      """[0m
+
+  Scenario: omit tagged hook[90m                                      # features/hooks.feature:25[0m
+    [32mWhen I run "[32m[1mcucumber features/f.feature:2[0m[0m[32m"[90m                    # aruba-0.3.2/lib/aruba/cucumber.rb:94[0m[0m
+    [32mThen it should [32m[1mfail[0m[0m[32m with:[90m                                     # aruba-0.3.2/lib/aruba/cucumber.rb:162[0m[0m
+[32m      """
+      Feature: With and without hooks
+
+        Scenario: using hook    # features/f.feature:2
+        boom (RuntimeError)
+        ./features/support/hooks.rb:2:in `Before'
+          Given this step works # features/step_definitions/steps.rb:1
+
+      Failing Scenarios:
+      cucumber features/f.feature:2 # Scenario: using hook
+
+      1 scenario (1 failed)
+      1 step (1 skipped)
+
+      """[0m
+
+  Scenario: omit tagged hook[90m                                      # features/hooks.feature:44[0m
+    [32mWhen I run "[32m[1mcucumber features/f.feature:6[0m[0m[32m"[90m                    # aruba-0.3.2/lib/aruba/cucumber.rb:94[0m[0m
+    [32mThen it should [32m[1mpass[0m[0m[32m with:[90m                                     # aruba-0.3.2/lib/aruba/cucumber.rb:162[0m[0m
+[32m      """
+      Feature: With and without hooks
+
+        @no-boom
+        Scenario: omitting hook # features/f.feature:6
+          Given this step works # features/step_definitions/steps.rb:1
+
+      1 scenario (1 passed)
+      1 step (1 passed)
+
+      """[0m
+
+2 scenarios ([32m2 passed[0m)
+10 steps ([32m10 passed[0m)
+0m1.634s
