@@ -14,5 +14,11 @@ module ANSI2HTML
       Main.new("\e[31mHello\e[0m", out)
       out.string.should == '<span class="red">Hello</span>'
     end
+
+    it "prints simply yellow" do
+      out = StringIO.new
+      Main.new("\e[33mHello\e[0m", out)
+      out.string.should == '<span class="yellow">Hello</span>'
+    end
   end
 end
