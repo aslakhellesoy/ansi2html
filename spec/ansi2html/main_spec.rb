@@ -6,7 +6,13 @@ module ANSI2HTML
     it "prints non-ansi as-is" do
       out = StringIO.new
       Main.new("Hello", out)
-      out.string.should == "Hello"
+      out.string.should == 'Hello'
+    end
+
+    it "prints simply red" do
+      out = StringIO.new
+      Main.new("\e[31mHello\e[0m", out)
+      out.string.should == '<span class="red">Hello</span>'
     end
   end
 end

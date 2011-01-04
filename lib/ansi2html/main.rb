@@ -5,7 +5,18 @@ module ANSI2HTML
     end
 
     def initialize(ansi, out)
-      out.print ansi
+      s = StringScanner.new(ansi)
+      while(!s.eos?)
+        if s.scan(/\e\[31m/)
+          out.print(%{<span class="red">})
+        else
+          if s.scan(/\e\[0m/)
+            out.print(%{</span>})
+          else
+            out.print(s.scan(/./))
+          end
+        end
+      end
     end
   end
 end
