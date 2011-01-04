@@ -1,3 +1,5 @@
+require 'strscan'
+
 module ANSI2HTML
   class Main
     COLOR = {
@@ -24,7 +26,7 @@ module ANSI2HTML
           if s.scan(/\e\[0m/)
             out.print(%{</span>})
           else
-            out.print(s.scan(/./))
+            out.print(s.scan(/./m))
           end
         end
       end
