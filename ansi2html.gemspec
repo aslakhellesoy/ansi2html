@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'ansi2html'
-  s.version     = '0.1.0'
+  s.version     = '5.3.2'
   s.authors     = ["Aslak Hellesøy"]
   s.description = 'Convert ANSI escape sequences to styleable HTML markup'
   s.summary     = "#{s.name}-#{s.version}"
