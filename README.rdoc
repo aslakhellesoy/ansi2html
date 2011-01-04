@@ -14,7 +14,8 @@ You need a way to show your entourage the true power of ANSI colours. -A way tha
 You will just
 
   gem install ansi2html
-  curl github.com/aslakhellesoy/ansi2html/raw/master/examples/summering_feil.txt | ansi2html --envelope > summering_feil.html && open summering_feil.html
+  curl github.com/aslakhellesoy/ansi2html/raw/master/examples/summering_feil.txt | ansi2html --envelope > summering_feil.html
+  open summering_feil.html
 
 OMG you have a LINUX machine so you will do {TODO WTF is the equivalent of open in LINUX} to open the file.
 ZOMFG you have WINDOWS. You'll figure out what to do. It works the same as a .htm file.
