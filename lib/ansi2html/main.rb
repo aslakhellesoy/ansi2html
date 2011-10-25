@@ -16,16 +16,20 @@ module ANSI2HTML
     }
     
     def self.execute
-      new(STDIN.read, STDOUT, ARGV.index('--envelope'))
+      new(STDIN.read, STDOUT, ARGV.index('--envelope'), ARGV.index('--black'))
     end
 
-    def initialize(ansi, out, envelope=false)
+    def initialize(ansi, out, envelope=false, black=false)
       if(envelope)
+        background, color = black ? %w(black white) : %w(white black)
         out.print %{<!doctype html>
 <html>
 <head>
   <meta charset="utf-8" />
   <style>
+    body {
+      background-color: #{background}; color: #{color};
+    }
     .bold {
       font-weight: bold;
     }
