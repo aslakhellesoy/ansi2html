@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'ansi2html'
-  s.version     = '5.3.3'
+  s.version     = '5.3.4'
   s.authors     = ["Aslak Hellesøy"]
   s.description = 'Convert ANSI escape sequences to styleable HTML markup'
   s.summary     = "#{s.name}-#{s.version}"
@@ -11,7 +11,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rspec', '~> 2.3.0'
 
-  s.rubygems_version   = "1.3.7"
   s.files            = `git ls-files`.split("\n")
   s.test_files       = `git ls-files -- {spec,features}/*`.split("\n")
   s.executables      = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
