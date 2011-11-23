@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description = 'Convert ANSI escape sequences to styleable HTML markup'
   s.summary     = "#{s.name}-#{s.version}"
   s.email       = 'aslak.hellesoy@gmail.com'
-  s.homepage    = 'http://github.com/aslakhellesoy/#{s.name}'
+  s.homepage    = "http://github.com/aslakhellesoy/#{s.name}"
 
   s.add_development_dependency 'rspec', '~> 2.3.0'
 
